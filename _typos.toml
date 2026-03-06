@@ -1,0 +1,6 @@
+[files]
+extend-exclude = ["docs/sdk/", "docs/app-shell/"]
+
+[default.extend-words]
+# Add custom words that should not be flagged as typos
+nin = "nin"

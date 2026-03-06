@@ -1,0 +1,48 @@
+# yaml-language-server: $schema=https://raw.githubusercontent.com/jackchuka/mdschema/main/schema.json
+
+# Documentation Schema - Full validation for index files
+# Validates structure, headings, and links
+
+# Link validation
+links:
+  validate_internal: true # check anchor links (#section-name)
+  validate_files: false # Handles extensionless links at build time
+  external_timeout: 10 # timeout in seconds for external URL checks
+  allowed_domains: # restrict external links to these domains
+    - github.com
+    - tailor.tech
+    - localhost
+    - 127.0.0.1
+    - registry.terraform.io
+    - en.wikipedia.org
+    - vitest.dev
+    - unicode.org
+    - ibm.com
+    - iana.org
+    - auth0.com
+    - brew.sh
+    - ietf.org
+    - nodejs.org
+    - graphql.org
+    - hashicorp.com
+    - buf.build
+    - slack.com
+    - microsoft.com
+    - google.com
+    - intuit.com
+    - openid.net
+    - shipstation.com
+    - loopreturns.com
+    - zapier.com
+    - pipedream.com
+    - aquaproj.github.io
+    - portal.azure.com
+    - www.npmjs.com
+    - sonner.emilkowal.ski
+  blocked_domains: [] # block links to these domains
+
+# Heading validation rules
+heading_rules:
+  no_skip_levels: true # disallow skipping levels (e.g., h1 -> h3)
+  unique: false # allow duplicate headings (common in docs with similar sections)
+  max_depth: 4 # maximum heading depth (h1-h4)

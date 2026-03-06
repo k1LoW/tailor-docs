@@ -1,0 +1,136 @@
+/**
+ * Tailor Table Styling
+ */
+
+/* ===== Table Container ===== */
+
+.vp-doc table {
+  width: 100%;
+  table-layout: auto;
+  text-align: left;
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  font-size: var(--vp-font-size-xs);
+  line-height: var(--vp-line-height-snug);
+  border-collapse: collapse;
+}
+
+/* ===== Table Head ===== */
+
+.vp-doc thead {
+  border-bottom: 1px solid var(--vp-c-divider);
+}
+
+.vp-doc thead th {
+  color: var(--vp-c-text-1);
+  font-weight: 600;
+  vertical-align: bottom;
+  padding: 0.5rem;
+  text-align: left;
+}
+
+.vp-doc thead th:first-child {
+  padding-left: 0.75rem;
+}
+
+.vp-doc thead th:last-child {
+  padding-right: 0.75rem;
+}
+
+/* ===== Table Body ===== */
+
+.vp-doc tbody tr {
+  border-bottom: 1px solid var(--vp-c-divider-light);
+  transition: background-color 0.2s;
+}
+
+.vp-doc tbody tr:last-child {
+  border-bottom: 0;
+}
+
+.vp-doc tbody tr:hover {
+  background-color: var(--vp-c-bg-soft);
+}
+
+.vp-doc tbody td {
+  vertical-align: baseline;
+  padding: 0.5rem;
+}
+
+.vp-doc tbody td:first-child {
+  padding-left: 0.75rem;
+  font-family: var(--vp-font-family-mono);
+  font-size: var(--vp-font-size-3xs);
+  font-weight: 500;
+  color: var(--vp-c-brand-1);
+}
+
+.vp-doc tbody td:last-child {
+  padding-right: 0.75rem;
+}
+
+/* ===== Nested Tables ===== */
+
+.vp-doc table table {
+  margin: 0;
+  font-size: inherit;
+}
+
+.vp-doc table table tr {
+  border: none;
+}
+
+.vp-doc table table tr:hover {
+  background-color: transparent;
+}
+
+/* ===== Table Content ===== */
+
+.vp-doc table p {
+  margin: 0;
+  font-size: inherit;
+  line-height: inherit;
+}
+
+.vp-doc table strong {
+  font-weight: 600;
+}
+
+.vp-doc table code {
+  font-size: var(--vp-font-size-3xs);
+}
+
+/* ===== Responsive Tables ===== */
+
+@media (max-width: 768px) {
+  .vp-doc .table-wrapper {
+    overflow-x: auto;
+    margin: 2rem -1.5rem;
+  }
+
+  .vp-doc .table-wrapper table {
+    margin: 0;
+  }
+
+  .vp-doc table {
+    display: block;
+    max-width: fit-content;
+  }
+}
+
+/* ===== Table Alignment ===== */
+
+.vp-doc table th[align="left"],
+.vp-doc table td[align="left"] {
+  text-align: left;
+}
+
+.vp-doc table th[align="center"],
+.vp-doc table td[align="center"] {
+  text-align: center;
+}
+
+.vp-doc table th[align="right"],
+.vp-doc table td[align="right"] {
+  text-align: right;
+}

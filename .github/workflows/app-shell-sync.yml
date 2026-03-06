@@ -1,0 +1,67 @@
+name: Update App Shell docs
+
+on:
+  schedule:
+    - cron: "0 0 * * *" # Runs at 00:00 UTC every day
+  workflow_dispatch: # Allows manual triggering
+
+jobs:
+  update-app-shell-pages:
+    runs-on: ubuntu-slim
+    permissions:
+      contents: write
+      pull-requests: write
+
+    env:
+      APP_SHELL_REF: main
+
+    steps:
+      - name: Checkout current repository
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          path: docs-v2
+
+      - name: Checkout app-shell repository
+        uses: actions/checkout@08c6903cd8c0fde910a37f88322edcfb5dd907a8 # v5.0.0
+        with:
+          repository: tailor-platform/app-shell
+          ref: ${{ env.APP_SHELL_REF }}
+          path: app-shell
+
+      - name: Set up Node.js
+        uses: actions/setup-node@395ad3262231945c25e8478fd5baf05154b1d79f # v6.1.0
+        with:
+          node-version: "24"
+
+      - name: Install dependencies for docs-sync script
+        working-directory: docs-v2/scripts/docs-sync
+        run: npm ci
+
+      - name: Sync the docs files
+        working-directory: docs-v2/scripts/docs-sync
+        run: npm start -- app-shell
+
+      - name: Check for changes
+        working-directory: docs-v2
+        id: git_diff
+        run: |
+          git config --global --add safe.directory $PWD
+          git add -A
+          if git diff --staged --quiet; then
+            echo "changed=false" >> $GITHUB_OUTPUT
+          else
+            echo "changed=true" >> $GITHUB_OUTPUT
+          fi
+
+      - name: Create Pull Request
+        if: steps.git_diff.outputs.changed == 'true'
+        uses: peter-evans/create-pull-request@271a8d0340265f705b14b6d32b9829c1cb33d45e # v7.0.8
+        with:
+          path: docs-v2
+          token: ${{ secrets.PAT_TOKEN }}
+          commit-message: Update App Shell pages
+          branch: update-app-shell-pages
+          title: Update App Shell pages
+          body: Auto-created by the update_app_shell_docs workflow.
+          base: main
+          labels: DOCS

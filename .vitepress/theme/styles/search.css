@@ -1,0 +1,12 @@
+/* Always show detailed search results and hide the toggle button */
+.VPLocalSearchBox .result .excerpt-wrapper {
+  display: block !important;
+}
+
+.VPLocalSearchBox .result .excerpt-gradient-bottom {
+  display: none !important;
+}
+
+.VPLocalSearchBox .search-keyboard-shortcuts {
+  display: flex !important;
+}

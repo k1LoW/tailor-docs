@@ -1,0 +1,35 @@
+/* Card Grid System */
+.cards {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+.cards-2 {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  margin: 24px 0;
+  align-items: stretch;
+}
+
+.cards-2 .vp-card {
+  height: 100%;
+}
+
+.cards-3 {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+  gap: 16px;
+  margin: 24px 0;
+}
+
+/* Single column on mobile */
+@media (max-width: 768px) {
+  .cards,
+  .cards-2,
+  .cards-3 {
+    grid-template-columns: 1fr;
+  }
+}

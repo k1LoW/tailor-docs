@@ -1,0 +1,47 @@
+.vp-tabs-content {
+  position: relative;
+}
+
+.vp-tab-panel {
+  opacity: 0;
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  pointer-events: none;
+}
+
+.vp-tab-panel.active {
+  opacity: 1;
+  position: relative;
+  pointer-events: auto;
+}
+
+.vp-tab-btn {
+  margin-right: 0.5rem;
+  padding: 0.25rem 0.5rem;
+  cursor: pointer;
+  border: 1px solid var(--vp-c-divider);
+  background: var(--vp-c-bg);
+  border-radius: 4px;
+  transition:
+    border-color 0.25s ease,
+    color 0.25s ease,
+    background-color 0.25s ease;
+}
+
+.vp-tab-btn:hover {
+  border-color: var(--vp-c-brand-2);
+  background: var(--vp-c-bg-soft);
+}
+
+.vp-tab-btn.active {
+  font-weight: 600;
+  border-color: var(--vp-c-brand-1);
+  color: var(--vp-c-brand-1);
+  background: rgba(83, 90, 232, 0.05);
+}
+
+.dark .vp-tab-btn.active {
+  background: rgba(121, 129, 226, 0.1);
+}

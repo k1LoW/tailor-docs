@@ -1,0 +1,67 @@
+/**
+ * Tailor Brand Colors
+ */
+
+:root {
+  /* ===== Tailor Brand Colors - Light Mode ===== */
+
+  /* Primary brand colors */
+  --vp-c-brand-1: #535ae8; /* tailorBlue - primary brand color */
+  --vp-c-brand-2: #7981e2; /* tailorMid - secondary */
+  --vp-c-brand-3: #c6ccf4; /* tailorLight - accent */
+  --vp-c-brand-soft: #535ae8;
+
+  /* Text colors */
+  --vp-c-text-1: #21245c; /* tailorBlack - headings & primary text */
+  --vp-c-text-2: rgba(33, 36, 92, 0.78); /* slightly faded */
+  --vp-c-text-3: rgba(33, 36, 92, 0.56); /* more faded */
+
+  /* Background colors */
+  --vp-c-bg: #ffffff;
+  --vp-c-bg-soft: #f9fafb;
+  --vp-c-bg-mute: #f3f4f6;
+
+  /* Border colors */
+  --vp-c-divider: rgba(33, 36, 92, 0.12);
+  --vp-c-divider-light: rgba(33, 36, 92, 0.08);
+
+  /* Code colors - inline */
+  --vp-code-color: #ec4899; /* pink-500 */
+  --vp-code-bg: #f4f4f5; /* zinc-100 */
+  --vp-code-border: #d4d4d8; /* zinc-300 */
+
+  /* Code block colors */
+  --vp-code-block-bg: rgba(33, 36, 92, 0.04);
+}
+
+.dark {
+  /* ===== Tailor Brand Colors - Dark Mode ===== */
+
+  /* Primary brand colors */
+  --vp-c-brand-1: #7981e2; /* tailorMid for dark mode */
+  --vp-c-brand-2: #9891ff; /* lighter purple */
+  --vp-c-brand-3: #c6ccf4;
+  --vp-c-brand-soft: #7981e2;
+
+  /* Text colors */
+  --vp-c-text-1: #ffffff;
+  --vp-c-text-2: #d4d4d8; /* zinc-300 */
+  --vp-c-text-3: #a1a1aa; /* zinc-400 */
+
+  /* Background colors */
+  --vp-c-bg: #1a1a1a;
+  --vp-c-bg-soft: #242424;
+  --vp-c-bg-mute: #2c2c2c;
+
+  /* Border colors */
+  --vp-c-divider: rgba(255, 255, 255, 0.12);
+  --vp-c-divider-light: rgba(255, 255, 255, 0.08);
+
+  /* Code colors - inline */
+  --vp-code-color: #f9a8d4; /* pink-400 */
+  --vp-code-bg: rgba(63, 63, 70, 0.15); /* zinc-700 with transparency */
+  --vp-code-border: rgba(255, 255, 255, 0.1);
+
+  /* Code block colors */
+  --vp-code-block-bg: rgba(0, 0, 0, 0.2);
+}

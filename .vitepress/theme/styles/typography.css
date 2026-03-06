@@ -1,0 +1,266 @@
+/**
+ * Tailor Typography System
+ */
+
+:root {
+  /* ===== Font Scale ===== */
+  --vp-font-size-3xs: 0.75rem; /* 12px */
+  --vp-font-size-2xs: 0.8125rem; /* 13px */
+  --vp-font-size-xs: 0.875rem; /* 14px */
+  --vp-font-size-sm: 1rem; /* 16px */
+  --vp-font-size-base: 1.125rem; /* 18px */
+  --vp-font-size-lg: 1.25rem; /* 20px */
+  --vp-font-size-xl: 1.5rem; /* 24px */
+  --vp-font-size-2xl: 1.875rem; /* 30px */
+  --vp-font-size-3xl: 2.25rem; /* 36px */
+  --vp-font-size-4xl: 3rem; /* 48px */
+  --vp-font-size-5xl: 3.75rem; /* 60px */
+  --vp-font-size-6xl: 4.5rem; /* 72px */
+  --vp-font-size-7xl: 6rem; /* 96px */
+  --vp-font-size-8xl: 8rem; /* 128px */
+
+  /* ===== Line Heights ===== */
+  --vp-line-height-tight: 1.25rem;
+  --vp-line-height-snug: 1.5rem;
+  --vp-line-height-normal: 1.75rem;
+  --vp-line-height-relaxed: 2rem;
+  --vp-line-height-loose: 2.5rem;
+}
+
+/* ===== Headings ===== */
+
+.vp-doc h1 {
+  font-size: var(--vp-font-size-3xl);
+  line-height: var(--vp-line-height-loose);
+  font-weight: 700;
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+  color: var(--vp-c-text-1);
+  letter-spacing: -0.025em;
+}
+
+.vp-doc h2 {
+  font-size: var(--vp-font-size-2xl);
+  line-height: var(--vp-line-height-relaxed);
+  font-weight: 600;
+  margin-top: 2.5rem;
+  margin-bottom: 1rem;
+  color: var(--vp-c-text-1);
+  border-top: 1px solid var(--vp-c-divider);
+  padding-top: 1.5rem;
+}
+
+.vp-doc h3 {
+  font-size: var(--vp-font-size-xl);
+  line-height: var(--vp-line-height-normal);
+  font-weight: 600;
+  margin-top: 2rem;
+  margin-bottom: 0.75rem;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc h4 {
+  font-size: var(--vp-font-size-lg);
+  line-height: var(--vp-line-height-normal);
+  font-weight: 600;
+  margin-top: 1.5rem;
+  margin-bottom: 0.75rem;
+  color: var(--vp-c-text-1);
+}
+
+/* ===== Body Text ===== */
+
+.vp-doc p {
+  font-size: var(--vp-font-size-sm);
+  line-height: var(--vp-line-height-normal);
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc [class*="lead"] {
+  font-size: var(--vp-font-size-lg);
+  line-height: var(--vp-line-height-relaxed);
+  margin-top: 1.5rem;
+  margin-bottom: 1.5rem;
+}
+
+/* ===== Lists ===== */
+
+.vp-doc ol,
+.vp-doc ul {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding-left: 1.625rem;
+}
+
+.vp-doc li {
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
+  padding-left: 0.375rem;
+  line-height: var(--vp-line-height-normal);
+}
+
+.vp-doc ol > li::marker {
+  font-weight: 400;
+  color: var(--vp-c-text-2);
+}
+
+.vp-doc ul > li::marker {
+  color: var(--vp-c-text-3);
+}
+
+.vp-doc li p {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+.vp-doc ol > li > *:first-child,
+.vp-doc ul > li > *:first-child {
+  margin-top: 0.5rem;
+}
+
+.vp-doc ol > li > *:last-child,
+.vp-doc ul > li > *:last-child {
+  margin-bottom: 0.5rem;
+}
+
+/* Nested lists */
+.vp-doc ul ul,
+.vp-doc ul ol,
+.vp-doc ol ul,
+.vp-doc ol ol {
+  margin-top: 0.75rem;
+  margin-bottom: 0.75rem;
+}
+
+/* ===== Links ===== */
+
+.vp-doc a {
+  color: var(--vp-c-brand-1);
+  text-decoration: underline transparent;
+  font-weight: 500;
+  transition:
+    color 0.25s ease,
+    text-decoration-color 0.25s ease;
+}
+
+.vp-doc a:hover {
+  color: var(--vp-c-brand-2);
+  text-decoration-color: rgba(83, 90, 232, 0.4);
+}
+
+.dark .vp-doc a:hover {
+  text-decoration-color: rgba(121, 129, 226, 0.4);
+}
+
+.vp-doc a code {
+  color: var(--vp-c-brand-1);
+}
+
+/* ===== Inline Code ===== */
+
+.vp-doc :not(pre) > code {
+  color: var(--vp-code-color);
+  background-color: var(--vp-code-bg);
+  border-radius: 0.375rem;
+  padding: 0.2rem 0.4rem;
+  font-size: var(--vp-font-size-2xs);
+  font-weight: 600;
+  box-shadow: inset 0 0 0 1px var(--vp-code-border);
+  transition:
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+/* ===== Blockquotes ===== */
+
+.vp-doc blockquote {
+  font-weight: 500;
+  font-style: italic;
+  color: var(--vp-c-text-1);
+  border-left: 0.25rem solid var(--vp-c-brand-2);
+  margin-top: 1.6rem;
+  margin-bottom: 1.6rem;
+  padding-left: 1rem;
+  quotes: "\201C" "\201D" "\2018" "\2019";
+}
+
+.vp-doc blockquote p:first-of-type::before {
+  content: open-quote;
+}
+
+.vp-doc blockquote p:last-of-type::after {
+  content: close-quote;
+}
+
+/* ===== Horizontal Rules ===== */
+
+.vp-doc hr {
+  border: 0;
+  border-top: 1px solid var(--vp-c-divider);
+  margin-top: 3rem;
+  margin-bottom: 3rem;
+}
+
+/* ===== Strong & Emphasis ===== */
+
+.vp-doc strong {
+  font-weight: 600;
+  color: var(--vp-c-text-1);
+}
+
+.vp-doc em {
+  font-style: italic;
+}
+
+/* ===== Figures & Images ===== */
+
+.vp-doc figure {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+}
+
+.vp-doc figcaption {
+  color: var(--vp-c-text-2);
+  font-size: var(--vp-font-size-xs);
+  line-height: var(--vp-line-height-snug);
+  margin-top: 0.875rem;
+  text-align: center;
+}
+
+.vp-doc img {
+  margin-top: 2rem;
+  margin-bottom: 2rem;
+  border-radius: 0.5rem;
+}
+
+/* ===== Pre-formatted Text ===== */
+
+.vp-doc pre {
+  margin-top: 1.75rem;
+  margin-bottom: 1.75rem;
+  overflow-x: auto;
+  border-radius: 0.5rem;
+}
+
+/* ===== Details/Summary ===== */
+
+.vp-doc details {
+  margin-top: 1.25rem;
+  margin-bottom: 1.25rem;
+  padding: 1rem;
+  border: 1px solid var(--vp-c-divider);
+  border-radius: 0.5rem;
+  background-color: var(--vp-c-bg-soft);
+}
+
+.vp-doc summary {
+  font-weight: 600;
+  cursor: pointer;
+  user-select: none;
+}
+
+.vp-doc summary:hover {
+  color: var(--vp-c-brand-1);
+}
