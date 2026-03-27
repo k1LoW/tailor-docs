@@ -51,7 +51,7 @@ Suspends the current workflow execution and waits for an external signal.
 **Arguments:**
 
 - **`key`** (string, required) — A unique identifier for this wait point within the workflow. Must match the pattern `^[a-z0-9][a-z0-9-]{1,61}[a-z0-9]$` (lowercase alphanumeric with hyphens, 3–63 characters).
-- **`payload`** (object, required) — JSON-serializable data to persist while waiting. This data is available to the `resolve()` callback.
+- **`payload`** (object, optional) — JSON-serializable data to persist while waiting. This data is available to the `resolve()` callback. Defaults to `{}` if omitted.
 
 **Return value:**
 
